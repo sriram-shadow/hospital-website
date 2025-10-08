@@ -1,59 +1,75 @@
-/* Login.css */
-
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* fill most of the screen */
-  background-color: #f0f4f8; /* light background */
+  height: 100vh;
+  background: #f0f2f5;
 }
 
 .login-box {
-  background-color: #ffffff;
-  padding: 40px 50px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
   width: 350px;
   text-align: center;
 }
 
 .login-box h2 {
-  margin-bottom: 25px;
-  color: #0077b6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
 }
 
 .login-box input {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px;
   font-size: 16px;
-}
-
-.login-box input:focus {
-  border-color: #0077b6;
-  outline: none;
 }
 
 .login-box button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0077b6;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
   font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
 .login-box button:hover {
-  background-color: #005f87;
+  background: #0056b3;
 }
 
 .login-box p {
   margin-top: 15px;
   font-size: 14px;
-  color: #555;
+}
+.role-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.role-toggle button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.role-toggle button.active {
+  background-color: #007bff;
+  color: white;
 }

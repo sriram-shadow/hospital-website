@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="home">
       <Header />
-      <main className="home-content" style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
+      <main className="home-content" >
         <h1 style={{ textAlign: "center" }}>Welcome to Eye Foundation Hospital</h1>
          <img src= "/assets/hospital.jpg" alt="Hospital" className="home-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
          <h2>Overview</h2>

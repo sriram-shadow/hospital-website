@@ -1,43 +1,58 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import "./AdminDashboard.css";
 
 function AdminDashboard({ appointments }) {
   return (
-    <div>
+    <div className="admin-dashboard">
       <Header />
-      <main style={{ padding: "50px", textAlign: "center" }}>
-        <h1>Doctor Dashboard</h1>
+
+      <main className="dashboard-main">
+        <section className="dashboard-header">
+          <h1>Doctor Dashboard</h1>
+          <p>Welcome Doctor! Here’s an overview of your upcoming appointments.</p>
+        </section>
 
         {appointments.length === 0 ? (
-          <p>No appointments yet.</p>
+          <div className="empty-state">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4076/4076504.png"
+              alt="No Appointments"
+            />
+            <p>No appointments yet. Once patients book, they’ll appear here.</p>
+          </div>
         ) : (
-          <table style={{ margin: "0 auto", borderCollapse: "collapse" }}>
-            <thead>
-              <tr>
-                <th style={thStyle}>Patient Name</th>
-                <th style={thStyle}>Disease</th>
-                <th style={thStyle}>Appointment Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {appointments.map((a) => (
-                <tr key={a.id}>
-                  <td style={tdStyle}>{a.name}</td>
-                  <td style={tdStyle}>{a.disease}</td>
-                  <td style={tdStyle}>{a.time}</td>
+          <div className="appointment-table-container">
+            <table className="appointment-table">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Disease / Concern</th>
+                  <th>Appointment Time</th>
+                  <th>Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {appointments.map((a) => (
+                  <tr key={a.id}>
+                    <td>{a.name}</td>
+                    <td>{a.disease}</td>
+                    <td>{a.time}</td>
+                    <td>
+                      <span className="status pending">Pending</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </main>
+
       <Footer />
     </div>
   );
 }
-
-const thStyle = { border: "1px solid #ccc", padding: "10px", background: "#0077b6", color: "white" };
-const tdStyle = { border: "1px solid #ccc", padding: "10px" };
 
 export default AdminDashboard;

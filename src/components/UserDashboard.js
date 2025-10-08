@@ -1,65 +1,116 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import "./UserDashboard.css";
 
 function UserDashboard({ appointments, setAppointments }) {
   const [name, setName] = useState("");
   const [disease, setDisease] = useState("");
+  const [doctor, setDoctor] = useState("");
+  const [date, setDate] = useState("");
 
   const handleBook = (e) => {
     e.preventDefault();
-    if (!name || !disease) return;
+    if (!name || !disease || !doctor || !date) {
+      alert("Please fill all fields!");
+      return;
+    }
 
     const newAppointment = {
       id: appointments.length + 1,
       name,
       disease,
-      time: new Date().toLocaleString(),
+      doctor,
+      date,
+      time: new Date().toLocaleTimeString(),
     };
 
     setAppointments([...appointments, newAppointment]);
     setName("");
     setDisease("");
+    setDoctor("");
+    setDate("");
     alert("Appointment booked successfully!");
   };
 
   return (
-    <div>
+    <div className="user-dashboard">
       <Header />
-      <main style={{ padding: "50px", textAlign: "center" }}>
-        <h1>User Appointment Page</h1>
 
-        <form onSubmit={handleBook} style={{ marginBottom: "30px" }}>
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            style={{ padding: "10px", marginRight: "10px" }}
-          />
-          <input
-            type="text"
-            placeholder="Disease"
-            value={disease}
-            onChange={(e) => setDisease(e.target.value)}
-            style={{ padding: "10px", marginRight: "10px" }}
-          />
-          <button type="submit" style={{ padding: "10px 20px" }}>Book Appointment</button>
-        </form>
-
-        <h2>My Appointments</h2>
-        {appointments.length === 0 ? (
-          <p>No appointments booked yet.</p>
-        ) : (
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {appointments.map((a) => (
-              <li key={a.id} style={{ marginBottom: "10px", border: "1px solid #ccc", padding: "10px", borderRadius: "8px" }}>
-                <strong>{a.name}</strong> - {a.disease} <br /> <em>{a.time}</em>
-              </li>
-            ))}
+      <div className="dashboard-container">
+        {/* Sidebar */}
+        <aside className="sidebar">
+          <h2>Dashboard</h2>
+          <ul>
+            <li>🏥 Book Appointment</li>
+            <li>📋 My Appointments</li>
+            <li>⚙️ Settings</li>
+            <li>🚪 Logout</li>
           </ul>
-        )}
-      </main>
+        </aside>
+
+        {/* Main Content */}
+        <main className="dashboard-content">
+          <h1>Welcome to Your Dashboard</h1>
+          <p className="subtitle">Book a doctor appointment easily and view your upcoming visits.</p>
+
+          {/* Appointment Form */}
+          <div className="form-card">
+            <h2>Book an Appointment</h2>
+            <form onSubmit={handleBook}>
+              <input
+                type="text"
+                placeholder="Your Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Health Issue / Disease"
+                value={disease}
+                onChange={(e) => setDisease(e.target.value)}
+              />
+              <select
+                value={doctor}
+                onChange={(e) => setDoctor(e.target.value)}
+              >
+                <option value="">Select Doctor</option>
+                <option>Dr. Ramesh (Cardiologist)</option>
+                <option>Dr. Priya (Dermatologist)</option>
+                <option>Dr. Arun (Orthopedic)</option>
+                <option>Dr. Kavitha (Pediatrician)</option>
+              </select>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+              <button type="submit">Book Appointment</button>
+            </form>
+          </div>
+
+          {/* Appointment List */}
+          <div className="appointments-section">
+            <h2>My Appointments</h2>
+            {appointments.length === 0 ? (
+              <p>No appointments booked yet.</p>
+            ) : (
+              <div className="appointment-grid">
+                {appointments.map((a) => (
+                  <div key={a.id} className="appointment-card">
+                    <h3>{a.doctor}</h3>
+                    <p><strong>Patient:</strong> {a.name}</p>
+                    <p><strong>Disease:</strong> {a.disease}</p>
+                    <p><strong>Date:</strong> {a.date}</p>
+                    <p><strong>Booked At:</strong> {a.time}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </main>
+      </div>
+
       <Footer />
     </div>
   );

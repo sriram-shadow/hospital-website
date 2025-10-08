@@ -1,0 +1,82 @@
+.admin-dashboard {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  padding: 50px;
+  flex: 1;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.empty-state img {
+  width: 120px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.appointment-table-container {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.appointment-table th,
+.appointment-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointment-table th {
+  background-color: #0077b6;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.appointment-table tr:hover {
+  background-color: #f1faff;
+  transition: 0.2s ease-in-out;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}

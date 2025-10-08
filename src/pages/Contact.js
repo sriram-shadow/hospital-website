@@ -6,20 +6,9 @@ import "./Contact.css";
 function Contact() {
   return (
     <div className="contact-page">
-      <Header />
+      <Header />  
       <h1>Contact Us</h1>
       <div className="contact-container">
-        {/* Form */}
-        <div className="contact-form">
-          <h2>Send a Message</h2>
-          <form>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
-            <textarea rows="4" placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-
         {/* Info */}
         <div className="contact-info">
           <h2>Our Contact Details</h2>

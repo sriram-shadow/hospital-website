@@ -75,10 +75,10 @@ function UserDashboard({ appointments, setAppointments }) {
                 onChange={(e) => setDoctor(e.target.value)}
               >
                 <option value="">Select Doctor</option>
-                <option>Dr. Ramesh (Cardiologist)</option>
-                <option>Dr. Priya (Dermatologist)</option>
-                <option>Dr. Arun (Orthopedic)</option>
-                <option>Dr. Kavitha (Pediatrician)</option>
+                <option>Dr. Ramesh </option>
+                <option>Dr. Priya </option>
+                <option>Dr. Arun </option>
+                <option>Dr. Kavitha </option>
               </select>
               <input
                 type="date"

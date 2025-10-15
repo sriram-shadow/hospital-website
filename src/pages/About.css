@@ -1,0 +1,142 @@
+.about {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===== Hero Banner ===== */
+.about-hero {
+  
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 60px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.about-overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.about-overlay p {
+  font-size: 1.2rem;
+}
+
+/* ===== History Section ===== */
+.history-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.history-text {
+  flex: 1 1 500px;
+}
+
+.history-text h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.history-text p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.history-img img {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Aravind Model Section ===== */
+.model-section {
+  background: #f1f9ff;
+  text-align: center;
+  padding: 70px 10%;
+}
+
+.model-section h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.model-intro {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.model-points {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.model-card {
+  background: white;
+  padding: 25px;
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.model-card i {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+.model-card h3 {
+  color: #023e8a;
+  margin-bottom: 10px;
+}
+
+.model-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.model-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .history-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .history-img img {
+    width: 90%;
+  }
+
+  .model-card {
+    width: 90%;
+  }
+}

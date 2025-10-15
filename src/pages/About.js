@@ -1,32 +1,95 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import "./About.css";
 
 function About() {
   return (
-    <div className="about" >
+    <div className="about">
       <Header />
-      <main className="about-content" style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
-        <h1>Aravind's first clinic</h1>
-        <p>The problem of avoidable blindness rapidly escalating remained a major cause of concern in the Indian healthcare scenario. In a developing country like India, the government alone cannot meet the health needs of all owing to a number of challenges like growing population, inadequate infrastructure, low per capita income, aging population, diseases in epidemic proportions and illiteracy.<br /><br />
 
-Realizing this, Dr. Venkataswamy wished to establish an alternate health care model that could supplement the efforts of the government and also be self-supporting. Following his retirement at age 58 in 1976, he established the GOVEL Trust under which Aravind Eye Hospitals were founded.<br /><br />
+      {/* Hero Banner */}
+      <section className="about-hero">
+        <div className="about-overlay">
+          <h1>About Aravind Eye Foundation</h1>
+          <p>Vision with Compassion. Service with Excellence.</p>
+        </div>
+      </section>
 
-The hospitals are named after Sri Aurobindo, one of the 20th century’s most revered spiritual leaders. In essence, Sri Aurobindo’s teachings insist on transcendence into a heightened state of consciousness and becoming better instruments for the divine force to work through.<br /><br />
+      {/* Founder Story */}
+      <main className="about-content">
+        <section className="history-section">
+          <div className="history-text">
+            <h2>Aravind’s First Clinic</h2>
+            <p>
+              The problem of avoidable blindness rapidly escalating remained a
+              major cause of concern in the Indian healthcare scenario. In a
+              developing country like India, the government alone cannot meet
+              the health needs of all due to challenges like population growth,
+              inadequate infrastructure, low income, aging population, and
+              illiteracy.
+            </p>
+            <p>
+              Realizing this, <strong>Dr. Venkataswamy</strong> envisioned an
+              alternate health care model that could supplement the efforts of
+              the government while remaining self-supporting. Following his
+              retirement in 1976, he established the GOVEL Trust, under which
+              Aravind Eye Hospitals were founded.
+            </p>
+            <p>
+              The hospitals are named after <strong>Sri Aurobindo</strong>, one
+              of the 20th century’s most revered spiritual leaders. His
+              teachings inspire transcendence and service through divine work.
+            </p>
+            <p>
+              From a humble 11-bed clinic with 4 doctors, Dr. V built what is
+              now one of the largest eye care facilities in the world —
+              dedicated to compassionate service for sight.
+            </p>
+          </div>
+          <div className="history-img">
+            <img src="/assets/drvenkataswamy.jpg" alt="Founder" />
+          </div>
+        </section>
 
-In an eleven bed hospital manned by 4 medical officers, Dr.V saw the potential for what is today, one of the largest facilities in the world for eye care. Over the years, this organisation has evolved into a sophisticated system dedicated to compassionate service for sight.</p>
-        <h2>Aravind Model</h2>
-        <p>Aravind Eye Care System is a comprehensive eye care delivery system that provides high quality, compassionate and affordable eye care to all. The Aravind model of eye care delivery is based on the following tenets:<br /><br />
+        {/* Aravind Model Section */}
+        <section className="model-section">
+          <h2>The Aravind Model</h2>
+          <p className="model-intro">
+            Aravind Eye Care System provides high-quality, compassionate, and
+            affordable eye care to all through an innovative, sustainable model.
+          </p>
 
-1. High quality, compassionate and affordable eye care to all<br />
-2. Large volume, high quality, efficient and cost effective service<br />
-3. Cross subsidisation of services<br />
-4. Self-sustainability through efficient management and judicious use of resources<br />
-5. Community outreach programmes to reach the underserved<br />
-6. Use of appropriate technology and innovation to enhance efficiency and reduce costs<br />
-7. Training and research to improve the quality of eye care delivery<br /><br /> </p>
+          <div className="model-points">
+            <div className="model-card">
+              <i className="fas fa-heartbeat"></i>
+              <h3>Compassionate Care</h3>
+              <p>Quality and empathy for every patient, regardless of income.</p>
+            </div>
+            <div className="model-card">
+              <i className="fas fa-users"></i>
+              <h3>High Volume Efficiency</h3>
+              <p>Handling large numbers while maintaining excellent quality.</p>
+            </div>
+            <div className="model-card">
+              <i className="fas fa-balance-scale"></i>
+              <h3>Cross-Subsidization</h3>
+              <p>Affordable care supported by efficient management.</p>
+            </div>
+            <div className="model-card">
+              <i className="fas fa-hand-holding-medical"></i>
+              <h3>Community Outreach</h3>
+              <p>Bringing services to rural and underserved populations.</p>
+            </div>
+            <div className="model-card">
+              <i className="fas fa-flask"></i>
+              <h3>Research & Training</h3>
+              <p>Continuous learning to improve the quality of eye care.</p>
+            </div>
+          </div>
+        </section>
       </main>
+
       <Footer />
     </div>
   );

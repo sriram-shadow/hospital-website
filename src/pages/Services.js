@@ -11,81 +11,155 @@ function Services() {
         <h1>Our Eye Care Services</h1>
         <p className="intro">
           We provide specialized diagnosis and treatment for a wide range of
-          eye conditions and diseases.
+          eye conditions and diseases. Our expert ophthalmologists use
+          state-of-the-art equipment to ensure the best outcomes for every patient.
         </p>
 
         <div className="service-grid">
+          {/* --- Existing 8 Services --- */}
           <div className="service-card">
             <h2>Cataract</h2>
-            <img src= "/assets/Cataract.jpg" alt="Cataract" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Cataract.jpg" alt="Cataract" className="service-image" />
             <p>
-              Clouding of the natural lens of the eye, leading to blurred
-              vision. We provide advanced cataract surgery with modern lenses.
+              Clouding of the natural lens of the eye, leading to blurred vision.
+              We provide advanced cataract surgery with modern lenses.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Glaucoma</h2>
-            <img src= "/assets/Glaucoma.jpg" alt="Glaucoma" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Glaucoma.jpg" alt="Glaucoma" className="service-image" />
             <p>
-              A group of diseases that damage the optic nerve, often due to high
-              eye pressure. We offer early detection and treatment.
+              Damage to the optic nerve often due to high eye pressure. We offer
+              early detection and specialized treatment plans.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Refractive Errors</h2>
-            <img src= "/assets/Refractive Errors.jpg" alt="Refractive Errors" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Refractive Errors.jpg" alt="Refractive Errors" className="service-image" />
             <p>
-              Conditions like Myopia (Nearsightedness), Hyperopia
-              (Farsightedness), and Astigmatism. LASIK and other solutions
-              available.
+              Includes Myopia, Hyperopia, and Astigmatism. We provide LASIK and
+              other advanced corrective options.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Diabetic Retinopathy</h2>
-            <img src= "/assets/Diabetic Retinopathy.jpg" alt="Diabetic Retinopathy" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Diabetic Retinopathy.jpg" alt="Diabetic Retinopathy" className="service-image" />
             <p>
-              Eye damage caused by diabetes affecting the retina. We use
-              advanced imaging and laser therapy for management.
+              Diabetes-related eye damage treated using advanced imaging and
+              laser therapy techniques.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Macular Degeneration</h2>
-            <img src= "/assets/Macular Degeneration.jpg" alt="Macular Degeneration" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Macular Degeneration.jpg" alt="Macular Degeneration" className="service-image" />
             <p>
-              A disease that affects the central part of the retina, leading to
-              vision loss in older adults. Specialized treatment is provided.
+              Vision loss in older adults due to retinal deterioration.
+              Comprehensive diagnosis and management available.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Keratoconus</h2>
-            <img src= "/assets/Keratoconus.jpg" alt="Keratoconus" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Keratoconus.jpg" alt="Keratoconus" className="service-image" />
             <p>
-              A condition where the cornea becomes thin and cone-shaped,
-              distorting vision. We provide corneal cross-linking and transplant
-              options.
+              Corneal thinning and bulging treated through corneal
+              cross-linking and transplantation.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Dry Eye Syndrome</h2>
-            <img src= "/assets/Dry Eye Syndrome.jpg" alt="Dry Eye Syndrome" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Dry Eye Syndrome.jpg" alt="Dry Eye Syndrome" className="service-image" />
             <p>
-              When the eyes do not produce enough tears or tears evaporate too
-              quickly. Treated with medication, therapy, and lifestyle changes.
+              Inadequate tear production or fast evaporation treated with
+              customized therapies and eye care plans.
             </p>
           </div>
 
           <div className="service-card">
             <h2>Conjunctivitis</h2>
-            <img src= "/assets/Conjunctivitis.jpg" alt="Conjunctivitis" className="service-image"  style={{ display: "block", margin: "20px auto", maxWidth: "80%", borderRadius: "10px" }} />
+            <img src="/assets/Conjunctivitis.jpg" alt="Conjunctivitis" className="service-image" />
             <p>
-              Also known as “pink eye,” it is the inflammation of the
-              conjunctiva, treated with proper medication and care.
+              Also known as “pink eye,” caused by infections or allergies.
+              Treated with proper diagnosis and medication.
+            </p>
+          </div>
+
+          {/* --- New 3 Services --- */}
+          <div className="service-card">
+            <h2>Retina Care</h2>
+            <img src="/assets/Retina care.jpg" alt="Retina" className="service-image" />
+            <p>
+              Comprehensive care for retinal diseases, diabetic eye conditions,
+              and macular disorders.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Pediatric Ophthalmology</h2>
+            <img src="/assets/pediatric.webp" alt="Pediatric" className="service-image" />
+            <p>
+              Eye care for children — early detection of visual problems and
+              specialized treatments for healthy eye development.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Cornea Clinic</h2>
+            <img src="/assets/cornea.jpg" alt="Cornea" className="service-image" />
+            <p>
+              Treatment for corneal injuries, infections, and transplants using
+              cutting-edge surgical methods.
+            </p>
+          </div>
+
+          {/* --- 5 Added Services --- */}
+          <div className="service-card">
+            <h2>Laser Vision Correction (LASIK)</h2>
+            <img src="/assets/lasik.webp" alt="LASIK" className="service-image" />
+            <p>
+              Modern laser procedures to correct nearsightedness, farsightedness,
+              and astigmatism — for clear vision without glasses.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Oculoplasty & Cosmetic Surgery</h2>
+            <img src="/assets/oculoplasty.jpg" alt="Oculoplasty" className="service-image" />
+            <p>
+              Eyelid reconstruction, tear duct surgeries, and cosmetic
+              enhancements performed by experts.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Uveitis & Inflammation Treatment</h2>
+            <img src="/assets/uveitis.jpeg" alt="Uveitis" className="service-image" />
+            <p>
+              Treatment for inflammation of the eye’s middle layer to prevent
+              vision loss and chronic pain.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Neuro-Ophthalmology</h2>
+            <img src="/assets/neuro.jpg" alt="Neuro Ophthalmology" className="service-image" />
+            <p>
+              Specialized care for optic nerve and brain-related vision problems
+              including double vision and nerve palsies.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h2>Vision Therapy & Rehabilitation</h2>
+            <img src="/assets/vision.jpg" alt="Vision Therapy" className="service-image" />
+            <p>
+              Exercises and visual training for patients with lazy eye,
+              binocular vision issues, or post-surgery recovery.
             </p>
           </div>
         </div>

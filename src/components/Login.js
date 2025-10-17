@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [role, setRole] = useState("user"); // new toggle for role
   const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.from || "/";
 
   // ---- LOGIN ----
   const handleLogin = async (e) => {
@@ -18,14 +19,22 @@ function Login() {
       const res = await fetch("http://localhost:8080/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: username, password }),
+        body: JSON.stringify({ email, password }),
       });
-      const data = await res.text();
-      alert(data);
 
-      if (data === "Login successful!") {
-        if (role === "admin") navigate("/admin");
-        else navigate("/user");
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem("username", email);
+        localStorage.setItem("role", data.role?.toLowerCase() || "user");
+        alert(data.message);
+        if ((data.role || "").toLowerCase() === "admin") {
+          navigate("/admin");
+        } else {
+          navigate(fromPage);
+        }
+      } else {
+        alert(data.message);
       }
     } catch (err) {
       console.error(err);
@@ -40,10 +49,13 @@ function Login() {
       const res = await fetch("http://localhost:8080/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: registerEmail, password: registerPassword }),
+        body: JSON.stringify({
+          email: registerEmail,
+          password: registerPassword,
+        }),
       });
-      const data = await res.text();
-      alert(data);
+      const data = await res.json();
+      alert(data.message);
       setIsRegister(false);
       setRegisterEmail("");
       setRegisterPassword("");
@@ -59,37 +71,20 @@ function Login() {
         {!isRegister ? (
           <>
             <h2>Hospital Login</h2>
-
-            {/* Toggle for User / Admin */}
-            <div className="role-toggle">
-              <button
-                type="button"
-                className={role === "user" ? "active" : ""}
-                onClick={() => setRole("user")}
-              >
-                User
-              </button>
-              <button
-                type="button"
-                className={role === "admin" ? "active" : ""}
-                onClick={() => setRole("admin")}
-              >
-                Admin
-              </button>
-            </div>
-
             <form onSubmit={handleLogin}>
               <input
-                type="text"
+                type="email"
                 placeholder="Enter Email"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <input
                 type="password"
                 placeholder="Enter Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <button type="submit">Login</button>
             </form>
@@ -98,7 +93,7 @@ function Login() {
               onClick={() => setIsRegister(true)}
               style={{ cursor: "pointer", color: "blue" }}
             >
-              Don't have an account? Register here
+              Don’t have an account? Register here
             </p>
           </>
         ) : (

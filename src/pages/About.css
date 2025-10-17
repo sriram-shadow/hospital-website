@@ -6,7 +6,7 @@
 
 /* ===== Hero Banner ===== */
 .about-hero {
-  
+  background-image: url("../../public/assets/hospital.jpg");
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -139,4 +139,54 @@
   .model-card {
     width: 90%;
   }
+}
+/* ===== Vision & Mission Section ===== */
+.vision-mission {
+  text-align: center;
+  background: #eaf6ff;
+  padding: 70px 10%;
+}
+
+.vision-mission h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.vm-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.vm-card {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.vm-card i {
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+.vm-card h3 {
+  color: #023e8a;
+  margin-bottom: 10px;
+}
+
+.vm-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.vm-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }

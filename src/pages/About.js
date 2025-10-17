@@ -16,8 +16,8 @@ function About() {
         </div>
       </section>
 
-      {/* Founder Story */}
       <main className="about-content">
+        {/* Founder Story */}
         <section className="history-section">
           <div className="history-text">
             <h2>Aravind’s First Clinic</h2>
@@ -49,6 +49,29 @@ function About() {
           </div>
           <div className="history-img">
             <img src="/assets/drvenkataswamy.jpg" alt="Founder" />
+          </div>
+        </section>
+
+        {/* Vision and Mission */}
+        <section className="vision-mission">
+          <h2>Our Vision & Mission</h2>
+          <div className="vm-container">
+            <div className="vm-card">
+              <i className="fas fa-eye"></i>
+              <h3>Our Vision</h3>
+              <p>
+                To eliminate needless blindness and provide world-class eye care
+                accessible to every section of society.
+              </p>
+            </div>
+            <div className="vm-card">
+              <i className="fas fa-hands-helping"></i>
+              <h3>Our Mission</h3>
+              <p>
+                To provide compassionate, high-quality, and affordable eye care
+                through excellence in service, innovation, and education.
+              </p>
+            </div>
           </div>
         </section>
 

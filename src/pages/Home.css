@@ -175,3 +175,106 @@
     width: 90%;
   }
 }
+/* ================= ABOUT SECTION ================= */
+.overview-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.overview-img {
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0096c7;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #023e8a;
+}
+
+/* ================= DOCTORS ================= */
+.doctors {
+  padding: 70px 10%;
+  background: #f1f9ff;
+  text-align: center;
+}
+
+.doctor-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.doctor-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+  padding: 70px 10%;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #0077b6, #0096c7);
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
